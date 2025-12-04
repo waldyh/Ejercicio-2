@@ -26,12 +26,6 @@ jobs:
       - name: Run unit tests with coverage
         run: npm test --coverage --coverageReporters=text --coverageReporters=lcov
 
-      - name: Upload coverage report
-        uses: codecov/codecov-action@v3
-        with:
-          files: ./coverage/lcov.info
-          fail_ci_if_error: true
-
       - name: Archive test results
         if: always()
         uses: actions/upload-artifact@v4
@@ -39,5 +33,4 @@ jobs:
           name: test-results
           path: |
             coverage/
-            test-results/
           retention-days: 7
