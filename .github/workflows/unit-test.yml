@@ -30,7 +30,7 @@ jobs:
             fail_ci_if_error:true
       - name: Archive test results
         if: always()
-        uses: actions/upload-artifac@v4
+        uses: actions/upload-artifac@v2
         with:
             name: test-results
             path:
