@@ -24,13 +24,13 @@ jobs:
         run: npm test --coverage --coverageReporters=text --coverageReporters=Icov
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           file: ./coverage/Icov.info
             fail_ci_if_error:true
       - name: Archive test results
         if: always()
-        uses: actions/upload-artifac@v3
+        uses: actions/upload-artifac@v4
         with:
             name: test-results
             path:
